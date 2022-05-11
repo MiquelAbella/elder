@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/MiquelAbella/elder/static/css/main.4e4528fc.css",
-    "main.js": "/MiquelAbella/elder/static/js/main.383f71ee.js",
+    "main.js": "/MiquelAbella/elder/static/js/main.11461bf1.js",
     "static/media/closeImg.png": "/MiquelAbella/elder/static/media/closeImg.ac87928f25805b1f5908.png",
     "static/media/speechImg.png": "/MiquelAbella/elder/static/media/speechImg.114ddcfcdec0ebc2909c.png",
     "index.html": "/MiquelAbella/elder/index.html",
     "main.4e4528fc.css.map": "/MiquelAbella/elder/static/css/main.4e4528fc.css.map",
-    "main.383f71ee.js.map": "/MiquelAbella/elder/static/js/main.383f71ee.js.map"
+    "main.11461bf1.js.map": "/MiquelAbella/elder/static/js/main.11461bf1.js.map"
   },
   "entrypoints": [
     "static/css/main.4e4528fc.css",
-    "static/js/main.383f71ee.js"
+    "static/js/main.11461bf1.js"
   ]
 }
