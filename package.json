@@ -10,12 +10,16 @@
     "gh-pages": "^4.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-onesignal": "^2.0.3",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "sweetalert2": "^11.4.12",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://miquelabella.github.io/elder/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -15,11 +15,11 @@ export const Main = ({ verificationCode, uid }) => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:5000/api/auth/getSchedule", { uid })
+      .post("https://elderpalmira.herokuapp.com/api/auth/getSchedule", { uid })
       .then((res) => {
         setSchedule(res.data.schedule);
       });
-  }, [uid]);
+  }, []);
 
   useEffect(() => {
     if (schedule !== {}) {
@@ -30,7 +30,7 @@ export const Main = ({ verificationCode, uid }) => {
   useEffect(() => {
     if (text.length > 5 && coords.length === 2) {
       axios
-        .post("http://localhost:5000/api/auth/postInfo", { uid, text, coords })
+        .post("https://elderpalmira.herokuapp.com/api/auth/postInfo", { uid, text, coords })
         .then((res) => {
           console.log(res.data);
         });

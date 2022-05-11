@@ -25,7 +25,7 @@ export const Login = ({ setUid, setVerificationCode }) => {
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/auth/loginUser", loginValues)
+      .post("https://elderpalmira.herokuapp.com/api/auth/loginUser", loginValues)
       .then((res) => {
         if (res.data.ok === true) {
           // document.cookie = `uid=${res.data.user.uid}`;
@@ -39,7 +39,7 @@ export const Login = ({ setUid, setVerificationCode }) => {
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/auth/createUser", registerValues)
+      .post("https://elderpalmira.herokuapp.com/api/auth/createUser", registerValues)
       .then((res) => {
         if (res.data.ok === true) {
           // document.cookie = `uid=${res.data.uid}`;
@@ -62,6 +62,7 @@ export const Login = ({ setUid, setVerificationCode }) => {
         <form className="elder-form" onSubmit={handleLoginSubmit}>
           <h1>Entra</h1>
           <input
+            autoComplete="username"
             type="text"
             name="lemail"
             value={loginValues.lemail}
@@ -69,6 +70,7 @@ export const Login = ({ setUid, setVerificationCode }) => {
             placeholder="Email del cuidador"
           />
           <input
+            autoComplete="current-password"
             type="password"
             name="lpassword"
             value={loginValues.lpassword}
