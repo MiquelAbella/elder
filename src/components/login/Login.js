@@ -28,7 +28,7 @@ export const Login = ({ setUid, setVerificationCode }) => {
       .post("https://elderpalmira.herokuapp.com/api/auth/loginUser", loginValues)
       .then((res) => {
         if (res.data.ok === true) {
-          // document.cookie = `uid=${res.data.user.uid}`;
+          document.cookie = `uid=${res.data.user.uid}`;
           setVerificationCode(res.data.user.verificationCode);
           setUid(res.data.user.uid);
         } else {
@@ -42,7 +42,7 @@ export const Login = ({ setUid, setVerificationCode }) => {
       .post("https://elderpalmira.herokuapp.com/api/auth/createUser", registerValues)
       .then((res) => {
         if (res.data.ok === true) {
-          // document.cookie = `uid=${res.data.uid}`;
+          document.cookie = `uid=${res.data.uid}`;
           setVerificationCode(res.data.verificationCode);
           setUid(res.data.uid);
         } else {

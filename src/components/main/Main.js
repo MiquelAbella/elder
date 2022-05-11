@@ -30,7 +30,11 @@ export const Main = ({ verificationCode, uid }) => {
   useEffect(() => {
     if (text.length > 5 && coords.length === 2) {
       axios
-        .post("https://elderpalmira.herokuapp.com/api/auth/postInfo", { uid, text, coords })
+        .post("https://elderpalmira.herokuapp.com/api/auth/postInfo", {
+          uid,
+          text,
+          coords,
+        })
         .then((res) => {
           console.log(res.data);
         });
@@ -91,7 +95,7 @@ export const Main = ({ verificationCode, uid }) => {
             : day === 5
             ? "Viernes"
             : "Sabado"
-        } , son las ${hour} i ${minutes}, a las ${hour + 1} ${
+        } , son las ${hour} horas y ${minutes} minutos, a las ${hour + 1} ${
           textToSpeak ? textToSpeak : "haz lo que te apetezca"
         } `
       );
