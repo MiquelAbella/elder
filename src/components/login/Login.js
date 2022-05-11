@@ -25,12 +25,17 @@ export const Login = ({ setUid, setVerificationCode }) => {
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://elderpalmira.herokuapp.com/api/auth/loginUser", loginValues)
+      .post(
+        "https://elderpalmira.herokuapp.com/api/auth/loginUser",
+        loginValues
+      )
       .then((res) => {
         if (res.data.ok === true) {
           document.cookie = `uid=${res.data.user.uid}`;
           setVerificationCode(res.data.user.verificationCode);
-          setUid(res.data.user.uid);
+          setTimeout(() => {
+            setUid(res.data.user.uid);
+          }, 500);
         } else {
           Swal.fire(res.data.msg, "", "info");
         }
@@ -39,12 +44,17 @@ export const Login = ({ setUid, setVerificationCode }) => {
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://elderpalmira.herokuapp.com/api/auth/createUser", registerValues)
+      .post(
+        "https://elderpalmira.herokuapp.com/api/auth/createUser",
+        registerValues
+      )
       .then((res) => {
         if (res.data.ok === true) {
           document.cookie = `uid=${res.data.uid}`;
           setVerificationCode(res.data.verificationCode);
-          setUid(res.data.uid);
+          setTimeout(() => {
+            setUid(res.data.uid);
+          }, 500);
         } else {
           Swal.fire(res.data.msg, "", "info");
         }
