@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { ProtectedRoutes } from "./router/ProtectedRoutes";
 import { PublicRoutes } from "./router/PublicRoutes";
 
@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <Routes>
+      <Routes basename="https://miquelabella.github.io/elder/">
         <Route path="/" element={<PublicRoutes uid={uid} />}>
           <Route
             path="/"
@@ -43,9 +43,9 @@ function App() {
             }
           />
         </Route>
-        <Route path="/main" element={<ProtectedRoutes uid={uid} />}>
+        <Route path="/" element={<ProtectedRoutes uid={uid} />}>
           <Route
-            path="/main"
+            path="/"
             element={<Main verificationCode={verificationCode} uid={uid} />}
           />
         </Route>
